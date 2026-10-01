@@ -14,9 +14,9 @@ if not defined PY (
 )
 
 rem Install pypdf the first time only
-%PY% -c "import pypdf" >nul 2>nul || (
-    echo Installing pypdf ^(one time only^)...
-    %PY% -m pip install --user --quiet pypdf
+%PY% -c "import pikepdf, pypdf, cryptography" >nul 2>nul || (
+    echo Installing pikepdf, pypdf ^(one time only^)...
+    %PY% -m pip install --user --quiet --upgrade pikepdf pypdf cryptography
 )
 
 rem %1 = folder dragged onto this file (optional)
